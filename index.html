@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formax Construction - House Building, Landscaping, Planning & Interior Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff6b35; /* Construction orange */
+            --secondary-color: #f7931e; /* Safety orange */
+            --accent-color: #ffd700; /* Gold yellow */
+            --tertiary-color: #ffed4e; /* Light yellow */
+            --construction-yellow: #ffff00; /* Bright yellow */
+            --construction-orange: #ff6b35; /* Orange */
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+            --bg-light: #fef3c7;
+            --bg-gradient: #ffff00; /* Yellow */
+            --bg-gradient-alt: #ffed4e; /* Light yellow */
+            --bg-gradient-hero: #ff6b35; /* Orange */
+            --shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+            --shadow-hover: 0 30px 60px rgba(255, 107, 53, 0.25);
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--bg-gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--bg-gradient-hero);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-gradient);
+            border-radius: 8px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            opacity: 0.1;
+            transform: scale(1);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--primary-color);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><pattern id="tools" width="200" height="150" patternUnits="userSpaceOnUse"><g opacity="0.1"><text x="50" y="40" fill="%23ffff00" font-size="24">🔨</text><text x="120" y="80" fill="%23ffff00" font-size="20">⚡</text><text x="30" y="120" fill="%23ffff00" font-size="18">🔧</text><text x="150" y="50" fill="%23ffff00" font-size="22">🏗️</text><text x="80" y="100" fill="%23ffff00" font-size="16">📐</text><path d="M10,10 L190,10 M10,40 L190,40 M10,70 L190,70 M10,100 L190,100 M10,130 L190,130" stroke="rgba(255,255,0,0.2)" stroke-width="1"/><path d="M10,10 L10,140 M40,10 L40,140 M70,10 L70,140 M100,10 L100,140 M130,10 L130,140 M160,10 L160,140 M190,10 L190,140" stroke="rgba(255,255,0,0.2)" stroke-width="1"/></g></pattern></defs><rect width="100%" height="100%" fill="url(%23tools)"/></svg>'),
+                linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(255,255,0,0.1) 100%);
+            animation: constructionFloat 20s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700"><defs><pattern id="construction-tools" width="250" height="180" patternUnits="userSpaceOnUse"><g opacity="0.2"><text x="30" y="50" fill="%23ffff00" font-size="28">🔨</text><text x="100" y="90" fill="%23ffff00" font-size="24">⚡</text><text x="170" y="60" fill="%23ffff00" font-size="26">🔧</text><text x="60" y="140" fill="%23ffff00" font-size="22">🏗️</text><text x="140" y="130" fill="%23ffff00" font-size="20">📐</text><text x="200" y="110" fill="%23ffff00" font-size="18">🛠️</text><path d="M10,10 L240,10 M10,45 L240,45 M10,80 L240,80 M10,115 L240,115 M10,150 L240,150 M10,170 L240,170" stroke="rgba(255,255,0,0.3)" stroke-width="1"/><path d="M10,10 L10,170 M50,10 L50,170 M90,10 L90,170 M130,10 L130,170 M170,10 L170,170 M210,10 L210,170 M240,10 L240,170" stroke="rgba(255,255,0,0.3)" stroke-width="1"/></g></pattern></defs><rect width="100%" height="100%" fill="url(%23construction-tools)"/></svg>');
+            opacity: 0.8;
+            animation: patternShift 30s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 2rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: var(--border-radius-lg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-gradient);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        /* Parallax Background */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="geometric" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50,10 L90,50 L50,90 L10,50 Z" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23geometric)"/></svg>');
+            background-size: cover;
+            will-change: transform;
+            opacity: 0.8;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: var(--transition);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--bg-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* About Section */
+        .about {
+            background: #fef3c7; /* Light yellow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: var(--bg-gradient);
+            opacity: 0.03;
+            border-radius: 50% 0 0 50%;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--bg-gradient);
+            border-radius: var(--border-radius-lg);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--bg-gradient);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="900" cy="200" r="1.5" fill="rgba(255,255,255,0.15)"/><circle cx="300" cy="800" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="700" cy="600" r="2.5" fill="rgba(255,255,255,0.12)"/><circle cx="500" cy="300" r="1.8" fill="rgba(255,255,255,0.08)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 1rem;
+            background: var(--white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--bg-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: var(--white);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .service-card:hover .service-icon {
+            animation: toolBounce 1.5s ease-in-out infinite;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .portfolio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-gradient);
+            opacity: 0.02;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            opacity: 0;
+            transform: scale(0.9) translateY(30px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .portfolio-item:hover::before {
+            opacity: 0.9;
+        }
+
+        .portfolio-image {
+            height: 220px;
+            background: var(--bg-gradient);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-image::before {
+            content: '🎨';
+            font-size: 4rem;
+            opacity: 0.8;
+            transition: var(--transition);
+            z-index: 2;
+            position: relative;
+        }
+
+        .portfolio-item:hover .portfolio-image::before {
+            transform: scale(1.2) rotate(10deg);
+            opacity: 0.6;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-content h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .portfolio-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateX(-40px);
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: rgba(99, 102, 241, 0.1);
+            font-family: 'Georgia', serif;
+            line-height: 1;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding-left: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-gradient);
+            opacity: 0.03;
+            border-radius: 0 100px 0 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(148, 163, 184, 0.2);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(248, 250, 252, 0.8);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .submit-btn {
+            background: var(--bg-gradient);
+            color: var(--white);
+            border: none;
+            padding: 1.25rem 3rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-details i {
+            width: 40px;
+            height: 40px;
+            background: #fef3c7; /* Light yellow */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><pattern id="footer-tools" width="150" height="100" patternUnits="userSpaceOnUse"><g opacity="0.1"><text x="20" y="30" fill="%23ffff00" font-size="16">🔨</text><text x="80" y="50" fill="%23ffff00" font-size="14">⚡</text><text x="50" y="80" fill="%23ffff00" font-size="12">🔧</text><text x="110" y="25" fill="%23ffff00" font-size="15">📐</text><path d="M5,5 L145,5 M5,25 L145,25 M5,45 L145,45 M5,65 L145,65 M5,85 L145,85" stroke="rgba(255,255,0,0.2)" stroke-width="0.5"/><path d="M5,5 L5,95 M35,5 L35,95 M65,5 L65,95 M95,5 L95,95 M125,5 L125,95" stroke="rgba(255,255,0,0.2)" stroke-width="0.5"/></g></pattern></defs><rect width="100%" height="100%" fill="url(%23footer-tools)"/></svg>');
+            opacity: 0.6;
+            animation: patternShift 40s ease-in-out infinite;
+        }
+
+        .footer-content {
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-links a {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: scale(0);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover::before {
+            transform: scale(1);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(1deg);
+            }
+            66% {
+                transform: translateY(-15px) rotate(-1deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes scrollPattern {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            33% {
+                transform: translateX(-50px) translateY(-20px);
+            }
+            66% {
+                transform: translateX(30px) translateY(-40px);
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes constructionFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+            50% {
+                transform: translateY(-5px) rotate(-0.5deg);
+            }
+            75% {
+                transform: translateY(-15px) rotate(0.5deg);
+            }
+        }
+
+        @keyframes patternShift {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        @keyframes craneMove {
+            0% {
+                transform: translateX(-100px) rotate(0deg);
+            }
+            50% {
+                transform: translateX(100px) rotate(5deg);
+            }
+            100% {
+                transform: translateX(-100px) rotate(0deg);
+            }
+        }
+
+        @keyframes toolBounce {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            25% {
+                transform: translateY(-8px) scale(1.05);
+            }
+            50% {
+                transform: translateY(-4px) scale(0.98);
+            }
+            75% {
+                transform: translateY(-12px) scale(1.02);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 3rem 2rem;
+                box-shadow: var(--shadow);
+                transform: translateY(-120%);
+                transition: var(--transition);
+                opacity: 0;
+                pointer-events: none;
+                border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .nav-links a {
+                padding: 1rem 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -7px);
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-item {
+                padding: 2rem 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="logo">Formax</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="parallax-bg" id="parallax-bg"></div>
+        <video autoplay muted loop class="hero-video" poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop">
+            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+            <!-- Fallback image for browsers that don't support video -->
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop" alt="Construction site" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        <div class="hero-content">
+            <h1>Building Your <span style="background: var(--secondary-color); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; padding: 0 0.2em; border-radius: 8px;">Dreams</span></h1>
+            <p>Formax Construction provides complete construction services including house building, landscaping, planning, and interior design. We turn your vision into reality with precision and excellence.</p>
+            <a href="#contact" class="cta-button">
+                <span>Get Free Quote</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Formax Construction</h2>
+                <p>Your trusted partner for complete construction solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Complete Construction Services Since 2017</h3>
+                    <p>At Formax Construction, we provide end-to-end construction services from concept to completion. Our expertise spans house building, landscaping, architectural planning, and interior design. We transform your vision into stunning reality with our skilled craftsmen and modern techniques.</p>
+                    <p>Whether you're building your dream home, renovating an existing space, or planning a commercial project, our licensed and insured team delivers exceptional results. We pride ourselves on quality workmanship, timely completion, and outstanding customer service.</p>
+                    <a href="#services" class="cta-button">Our Services</a>
+                </div>
+                <div class="about-image">
+                    <div style="width: 100%; height: 350px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; position: relative; overflow: hidden;">
+                        <span style="z-index: 1; text-align: center; font-weight: 700;">Building Excellence<br>Since 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">Safety Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="150">0</span>
+                    <span class="stat-label">Team Members</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive construction solutions from foundation to finish</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">�️</div>
+                    <h3>House Building</h3>
+                    <p>Complete custom home construction from foundation to roof. We build your dream home with premium materials, modern techniques, and exceptional craftsmanship.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">�</div>
+                    <h3>Landscaping</h3>
+                    <p>Transform your outdoor spaces with professional landscaping services including garden design, hardscaping, irrigation systems, and outdoor lighting.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Architectural Planning</h3>
+                    <p>Expert architectural planning and design services. From initial concept to detailed blueprints, we ensure your vision becomes a structural reality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">�</div>
+                    <h3>Interior Design</h3>
+                    <p>Complete interior design solutions including space planning, material selection, furniture layout, and decorative finishes for beautiful, functional spaces.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical Services</h3>
+                    <p>Complete electrical installation and maintenance services, including smart home automation and energy-efficient solutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">�</div>
+                    <h3>Plumbing Solutions</h3>
+                    <p>Professional plumbing installation, repair, and maintenance services for residential and commercial properties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p>Showcasing our most impressive construction achievements</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Modern Residential Complex</h3>
+                        <p>A 50-unit luxury residential development featuring sustainable design, smart home technology, and premium finishes throughout.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Corporate Headquarters</h3>
+                        <p>State-of-the-art office building with LEED certification, featuring open floor plans and advanced HVAC systems.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Industrial Warehouse</h3>
+                        <p>Large-scale industrial facility with heavy-duty construction, advanced logistics systems, and safety compliance.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Historic Renovation</h3>
+                        <p>Complete restoration of a historic building while maintaining architectural integrity and modern functionality.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Retail Center</h3>
+                        <p>Modern shopping center with sustainable materials, energy-efficient design, and accessible architecture.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop');"></div>
+                    <div class="portfolio-content">
+                        <h3>Educational Facility</h3>
+                        <p>State-of-the-art school building with advanced learning spaces, safety features, and environmental design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Real experiences from partners who trusted us with their construction projects</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Formax Construction delivered our office building ahead of schedule and under budget. Their attention to safety and quality standards was exceptional throughout the entire project."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <p>CEO, TechFlow Industries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Working with Formax was a seamless experience. They transformed our vision for a modern residential complex into reality with incredible craftsmanship and professional management."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Property Developer, Urban Living</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The team's expertise in commercial construction is unmatched. Our new warehouse facility exceeded all expectations in terms of functionality, safety, and energy efficiency."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DC</div>
+                        <div class="author-info">
+                            <h4>David Chen</h4>
+                            <p>Operations Director, Logistics Plus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Project</h2>
+                <p>Ready to build something extraordinary? Let's discuss how we can bring your construction vision to life</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            <div class="error-message">Please enter your full name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                            <div class="error-message">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Project Type</label>
+                            <input type="text" id="subject" name="subject" placeholder="Residential, Commercial, Renovation..." required>
+                            <div class="error-message">Please specify your project type</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, timeline, budget, and location..." required></textarea>
+                            <div class="error-message">Please provide project details</div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Request Quote</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to start your construction project? We're here to turn your vision into reality with our expertise in building excellence.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <i>📧</i>
+                            <div>
+                                <strong>Email</strong><br>
+                                projects@formaxconstruction.com
+                            </div>
+                        </li>
+                        <li>
+                            <i>📱</i>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +1 (555) 123-BUILD
+                            </div>
+                        </li>
+                        <li>
+                            <i>📍</i>
+                            <div>
+                                <strong>Headquarters</strong><br>
+                                123 Construction Way, Suite 200<br>
+                                Builder City, BC 12345
+                            </div>
+                        </li>
+                        <li>
+                            <i>🕒</i>
+                            <div>
+                                <strong>Business Hours</strong><br>
+                                Monday - Friday: 7:00 AM - 6:00 PM<br>
+                                Emergency: 24/7 Available
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Formax Construction</h3>
+                <p>Building the future with precision, safety, and excellence. From foundation to finish, we deliver quality construction services.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Follow us on Facebook">📘</a>
+                    <a href="#" aria-label="Twitter" title="Follow us on Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn">💼</a>
+                    <a href="#" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+                    <a href="#" aria-label="YouTube" title="Watch our projects on YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Formax Construction. All rights reserved. Licensed & Insured • Building Dreams Since 2017.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Parallax effect
+        const parallaxBg = document.getElementById('parallax-bg');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            parallaxBg.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation for stats
+                    if (entry.target.id === 'stats') {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('.section, .service-card, .portfolio-item, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const current = parseInt(counter.textContent);
+                
+                if (current < target) {
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        const current = parseInt(counter.textContent);
+                        if (current < target) {
+                            counter.textContent = Math.ceil(current + increment);
+                        } else {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        }
+                    }, 30);
+                }
+            });
+        }
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            let isValid = true;
+            
+            // Validate required fields
+            const requiredFields = ['name', 'email', 'subject', 'message'];
+            requiredFields.forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                const group = field.closest('.form-group');
+                
+                if (!field.value.trim()) {
+                    group.classList.add('error');
+                    isValid = false;
+                }
+            });
+            
+            // Validate email
+            const email = document.getElementById('email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value && !emailPattern.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate phone (if provided)
+            const phone = document.getElementById('phone');
+            const phonePattern = /^[\+]?[\d\s\-\(\)]{10,}$/;
+            if (phone.value && !phonePattern.test(phone.value)) {
+                phone.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+
+        // Add input event listeners for real-time validation feedback
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                const group = this.closest('.form-group');
+                if (group.classList.contains('error') && this.value.trim()) {
+                    group.classList.remove('error');
+                }
+            });
+        });
+
+        // Add smooth reveal animations with stagger effect
+        function revealElements() {
+            const elements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card');
+            elements.forEach((el, index) => {
+                if (el.classList.contains('visible')) {
+                    setTimeout(() => {
+                        el.style.animationDelay = `${index * 0.1}s`;
+                        el.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    }, index * 100);
+                }
+            });
+        }
+
+        // Enhanced scroll animations
+        let ticking = false;
+        function updateAnimations() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    // Update parallax
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.3;
+                    if (parallaxBg) {
+                        parallaxBg.style.transform = `translateY(${rate}px)`;
+                    }
+                    
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateAnimations);
+
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            // Add loading class removal for hero animations
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+
+        // Add custom cursor effect (optional enhancement)
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.custom-cursor');
+            if (cursor) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close mobile menu if open
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Performance optimization: Debounce scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to scroll-heavy functions
+        const debouncedScroll = debounce(() => {
+            // Additional scroll-based animations can be added here
+        }, 10);
+
+        window.addEventListener('scroll', debouncedScroll);
+    </script>
+</body>
+</html>
