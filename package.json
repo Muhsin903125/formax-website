@@ -1,0 +1,14 @@
+{
+  "name": "formax-builders-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Formax Builders construction website with a JSON-backed CMS (Vercel Blob), password protection, and Cloudinary uploads.",
+  "scripts": {
+    "start": "node cms-server.js",
+    "dev": "node cms-server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.3.3"
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Formax Builders · CMS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cms.css">
+</head>
+<body class="cms-body">
+  <header class="cms-topbar">
+    <div class="cms-topbar-inner">
+      <a href="index.html" class="cms-brand"><img class="brand-mark-img" src="assets/logo-mark.svg" alt=""><span>Formax <b>CMS</b></span></a>
+      <div class="cms-actions">
+        <a href="index.html" target="_blank" class="cms-link-button">Open Site ↗</a>
+        <button class="cms-button cms-button-secondary" id="cms-reload" type="button">Reload</button>
+        <button class="cms-button cms-button-secondary" id="cms-logout" type="button" hidden>Log Out</button>
+        <button class="cms-button cms-button-primary" id="cms-save" type="button">Save Changes</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="cms-layout">
+    <aside class="cms-sidebar" aria-label="CMS sections">
+      <button class="cms-tab active" type="button" data-tab="site">Site</button>
+      <button class="cms-tab" type="button" data-tab="home">Home</button>
+      <button class="cms-tab" type="button" data-tab="about">About</button>
+      <button class="cms-tab" type="button" data-tab="services">Services</button>
+      <button class="cms-tab" type="button" data-tab="projects">Projects</button>
+      <button class="cms-tab" type="button" data-tab="testimonials">Testimonials</button>
+      <button class="cms-tab" type="button" data-tab="certifications">Certifications</button>
+      <button class="cms-tab" type="button" data-tab="contact">Contact</button>
+      <button class="cms-tab" type="button" data-tab="submissions">Submissions</button>
+      <div class="cms-status" id="cms-status">Loading CMS…</div>
+    </aside>
+
+    <section class="cms-editor">
+      <section class="cms-login" id="cms-login" aria-label="CMS login" hidden>
+        <form class="cms-login-card" id="cms-login-form">
+          <span class="cms-login-eyebrow">Secure CMS</span>
+          <h1>Log in</h1>
+          <p>Enter the CMS password to manage site content and media.</p>
+          <label for="cms-password">Password</label>
+          <div class="cms-login-row">
+            <input id="cms-password" type="password" autocomplete="current-password" placeholder="CMS password">
+            <button class="cms-button cms-button-primary" type="submit">Log In</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="cms-workspace" id="cms-workspace">
+        <div class="cms-cloudinary" id="cms-cloudinary">
+          <strong>Images</strong>
+          <span id="cms-cloudinary-state">Checking configuration…</span>
+        </div>
+        <div id="cms-panel" class="cms-panel"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/cms-admin.js" defer></script>
+</body>
+</html>
