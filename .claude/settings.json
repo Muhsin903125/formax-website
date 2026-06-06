@@ -9,7 +9,9 @@
       "Bash(cd \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\" && rm -rf .playwright-mcp *.jpeg && echo cleaned)",
       "mcp__plugin_playwright_playwright__browser_hover",
       "Bash(git config *)",
-      "Bash(echo \"=== committing as $\\(git config user.name\\) ===\")"
+      "Bash(echo \"=== committing as $\\(git config user.name\\) ===\")",
+      "Bash(git push *)",
+      "Bash(git credential *)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",
