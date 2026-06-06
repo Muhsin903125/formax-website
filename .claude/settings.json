@@ -10,7 +10,8 @@
       "mcp__plugin_playwright_playwright__browser_hover"
     ],
     "additionalDirectories": [
-      "D:\\MuhsinStuff\\projects\\formax-website"
+      "D:\\MuhsinStuff\\projects\\formax-website",
+      "d:\\MuhsinStuff\\projects\\formax-website"
     ]
   }
 }
