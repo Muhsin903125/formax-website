@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Formax Builders home" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img [ref=e5]
+        - generic [ref=e6]: Formax Builders
+      - button "Open menu" [ref=e7] [cursor=pointer]
+      - navigation "Primary" [ref=e11]:
+        - link "Home" [ref=e12] [cursor=pointer]:
+          - /url: index.html
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: about.html
+        - link "Services" [ref=e14] [cursor=pointer]:
+          - /url: services.html
+        - link "Projects" [ref=e15] [cursor=pointer]:
+          - /url: projects.html
+        - link "Contact" [ref=e16] [cursor=pointer]:
+          - /url: contact.html
+        - link "Get a Quote" [ref=e17] [cursor=pointer]:
+          - /url: contact.html
+          - text: Get a Quote
+          - img [ref=e18]
+  - main [ref=e20]:
+    - generic [ref=e23]:
+      - paragraph [ref=e24]:
+        - link "Home" [ref=e25] [cursor=pointer]:
+          - /url: index.html
+        - text: / Services
+      - generic [ref=e26]: What We Do
+      - heading "Construction Services" [level=1] [ref=e27]
+      - paragraph [ref=e28]: From foundation to finish — every discipline you need under one roof.
+    - generic [ref=e31]:
+      - article [ref=e32]:
+        - generic [ref=e34]:
+          - text: "01"
+          - img [ref=e36]
+          - heading "House Building" [level=3] [ref=e40]
+          - paragraph: We build your dream home with premium materials, modern techniques, and exceptional craftsmanship — managing every stage from groundwork to handover.
+          - list:
+            - listitem [ref=e41]: Custom home design
+            - listitem [ref=e42]: Foundation & structure
+            - listitem [ref=e43]: Premium finishes
+            - listitem [ref=e44]: Turnkey handover
+      - article [ref=e45]:
+        - generic [ref=e47]:
+          - text: "02"
+          - img [ref=e49]
+          - heading "Landscaping" [level=3] [ref=e52]
+          - paragraph: Professional landscaping including garden design, hardscaping, irrigation systems, and outdoor lighting for beautiful, low-maintenance exteriors.
+          - list:
+            - listitem [ref=e53]: Garden design
+            - listitem [ref=e54]: Hardscaping & paving
+            - listitem [ref=e55]: Irrigation systems
+            - listitem [ref=e56]: Outdoor lighting
+      - article [ref=e57]:
+        - generic [ref=e59]:
+          - text: "03"
+          - img [ref=e61]
+          - heading "Architectural Planning" [level=3] [ref=e64]
+          - paragraph: From initial concept to detailed blueprints and approvals, we ensure your vision becomes a structural reality that's buildable, compliant and beautiful.
+          - list:
+            - listitem [ref=e65]: Concept design
+            - listitem [ref=e66]: Construction drawings
+            - listitem [ref=e67]: Permits & approvals
+            - listitem [ref=e68]: 3D visualisation
+      - article [ref=e69]:
+        - generic [ref=e71]:
+          - text: "04"
+          - img [ref=e73]
+          - heading "Interior Design" [level=3] [ref=e77]
+          - paragraph: Complete interior solutions including space planning, material selection, furniture layout, and decorative finishes for spaces that work and wow.
+          - list:
+            - listitem [ref=e78]: Space planning
+            - listitem [ref=e79]: Material & finish selection
+            - listitem [ref=e80]: Custom joinery
+            - listitem [ref=e81]: Styling & decor
+      - article [ref=e82]:
+        - generic [ref=e84]:
+          - text: "05"
+          - img [ref=e86]
+          - heading "Electrical Services" [level=3] [ref=e88]
+          - paragraph: Complete electrical installation and maintenance, including smart home automation and energy-efficient solutions for homes and businesses.
+          - list:
+            - listitem [ref=e89]: Wiring & panels
+            - listitem [ref=e90]: Smart home automation
+            - listitem [ref=e91]: Energy-efficient lighting
+            - listitem [ref=e92]: Testing & certification
+      - article [ref=e93]:
+        - generic [ref=e95]:
+          - text: "06"
+          - img [ref=e97]
+          - heading "Plumbing Solutions" [level=3] [ref=e100]
+          - paragraph: Professional plumbing installation, repair, and maintenance for residential and commercial properties — clean water in, waste water out, no surprises.
+          - list:
+            - listitem [ref=e101]: Water supply systems
+            - listitem [ref=e102]: Drainage & sewerage
+            - listitem [ref=e103]: Fixtures & fittings
+            - listitem [ref=e104]: Leak detection & repair
+      - article [ref=e105]:
+        - generic [ref=e107]:
+          - text: "07"
+          - img [ref=e109]
+          - heading "Renovation & Remodeling" [level=3] [ref=e113]
+          - paragraph: Full and partial renovations that modernise, expand and add value — from single rooms to whole-building transformations, on schedule and on budget.
+          - list:
+            - listitem [ref=e114]: Kitchen & bath remodels
+            - listitem [ref=e115]: Structural alterations
+            - listitem [ref=e116]: Extensions
+            - listitem [ref=e117]: Heritage restoration
+      - article [ref=e118]:
+        - generic [ref=e120]:
+          - text: "08"
+          - img [ref=e122]
+          - heading "Project Management" [level=3] [ref=e126]
+          - paragraph: End-to-end project management covering budgeting, scheduling, procurement, safety and quality control so your project lands on time and on budget.
+          - list:
+            - listitem [ref=e127]: Budget & cost control
+            - listitem [ref=e128]: Scheduling
+            - listitem [ref=e129]: Procurement
+            - listitem [ref=e130]: Safety & QA/QC
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e134]: Design Styles
+        - heading "Aesthetics We Build" [level=2] [ref=e135]
+        - paragraph [ref=e136]: Tell us the look you love — we build across these signature design languages.
+      - generic [ref=e137]:
+        - article [ref=e138]:
+          - generic [ref=e139]:
+            - img "Box-Model / Minimalist" [ref=e140]
+            - generic [ref=e141]: "01"
+          - generic [ref=e142]:
+            - heading "Box-Model / Minimalist" [level=3] [ref=e143]
+            - generic [ref=e144]: Clean lines, honest materials
+            - paragraph [ref=e145]: Pure geometric volumes, uninterrupted planes and a restrained palette. We let light, proportion and craftsmanship do the talking — nothing excessive, everything intentional.
+        - article [ref=e146]:
+          - generic [ref=e147]:
+            - img "Fusion / Traditional Hybrid" [ref=e148]
+            - generic [ref=e149]: "02"
+          - generic [ref=e150]:
+            - heading "Fusion / Traditional Hybrid" [level=3] [ref=e151]
+            - generic [ref=e152]: Heritage meets modern
+            - paragraph [ref=e153]: A balance of timeless craftsmanship and contemporary comfort — traditional motifs, natural stone and woodwork reimagined with modern layouts, glazing and finishes.
+        - article [ref=e154]:
+          - generic [ref=e155]:
+            - img "Tropical Contemporary" [ref=e156]
+            - generic [ref=e157]: "03"
+          - generic [ref=e158]:
+            - heading "Tropical Contemporary" [level=3] [ref=e159]
+            - generic [ref=e160]: Open, breezy, light-filled
+            - paragraph [ref=e161]: Designed for warm climates — cross-ventilation, deep shade, indoor-outdoor living and lush courtyards paired with clean contemporary detailing and natural textures.
+    - generic [ref=e164]:
+      - heading "Ready to build something extraordinary?" [level=2] [ref=e165]
+      - paragraph [ref=e166]: Tell us about your project, timeline and budget — we'll turn your vision into reality.
+      - link "Start Your Project" [ref=e167] [cursor=pointer]:
+        - /url: contact.html
+        - text: Start Your Project
+        - img [ref=e168]
+  - contentinfo [ref=e170]:
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - link "Instagram" [ref=e173] [cursor=pointer]:
+          - /url: https://instagram.com/formaxbuilders
+          - img [ref=e174]
+        - link "Facebook" [ref=e178] [cursor=pointer]:
+          - /url: https://www.facebook.com/profile.php?id=61590441039128
+          - img [ref=e179]
+        - link "YouTube" [ref=e181] [cursor=pointer]:
+          - /url: https://www.youtube.com/@formaxbuilders
+          - img [ref=e182]
+      - generic [ref=e184]:
+        - text: © 2026 Formax Builders. Licensed, bonded & insured ·
+        - link "Privacy & Terms" [ref=e185] [cursor=pointer]:
+          - /url: privacy.html
+  - link "Chat on WhatsApp" [ref=e186] [cursor=pointer]:
+    - /url: https://wa.me/919995238832
+    - img [ref=e187]

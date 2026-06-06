@@ -6,7 +6,8 @@
       "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>{const c=JSON.parse\\(d\\).content;console.log\\('designStyles:',\\(c.designStyles||[]\\).length,'| services:',c.services.length\\)}\\)\")",
       "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>{const c=JSON.parse\\(d\\).content;console.log\\('email:',c.site.email,'| designStyles:',\\(c.designStyles||[]\\).length\\)}\\)\")",
       "Bash(cd \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\" && rm -f *.jpeg && rm -rf .playwright-mcp && echo cleaned)",
-      "Bash(cd \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\" && rm -rf .playwright-mcp *.jpeg && echo cleaned)"
+      "Bash(cd \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\" && rm -rf .playwright-mcp *.jpeg && echo cleaned)",
+      "mcp__plugin_playwright_playwright__browser_hover"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website"
