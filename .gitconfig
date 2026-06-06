@@ -1,0 +1,9 @@
+[user]
+	name = Muhsin903125
+	email = Muhsin903125@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = true
+[pull]
+	rebase = false

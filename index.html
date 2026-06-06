@@ -33,14 +33,46 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "name": "Formax Builders",
-    "description": "Premium construction services from foundation to finish.",
-    "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200",
-    "url": "https://formaxbuilders.com",
-    "sameAs": ["https://instagram.com/formaxbuilders"],
-    "areaServed": "Regional",
-    "foundingDate": "2017"
+    "@graph": [
+      {
+        "@type": ["GeneralContractor", "LocalBusiness"],
+        "@id": "https://formaxbuilders.com/#business",
+        "name": "Formax Builders",
+        "alternateName": "Formax Builders and Developers",
+        "description": "Premium construction company offering end-to-end services — house building, commercial construction, renovation, landscaping, architectural planning and interior design. Licensed, bonded & insured since 2017.",
+        "url": "https://formaxbuilders.com/",
+        "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200",
+        "telephone": "+91 99952 38832",
+        "email": "formaxbuilders@gmail.com",
+        "foundingDate": "2017",
+        "priceRange": "$$",
+        "areaServed": "IN",
+        "knowsAbout": ["House Building", "Commercial Construction", "Renovation", "Landscaping", "Architectural Planning", "Interior Design", "Project Management"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Builder City", "addressCountry": "IN" },
+        "sameAs": [
+          "https://instagram.com/formaxbuilders",
+          "https://www.facebook.com/profile.php?id=61590441039128",
+          "https://www.linkedin.com/in/formax-builders-b105b5414/",
+          "https://www.youtube.com/@formaxbuilders"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://formaxbuilders.com/#website",
+        "url": "https://formaxbuilders.com/",
+        "name": "Formax Builders",
+        "publisher": { "@id": "https://formaxbuilders.com/#business" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What services does Formax Builders offer?", "acceptedAnswer": { "@type": "Answer", "text": "Formax Builders provides end-to-end construction services: custom house building, commercial construction, renovation & remodeling, landscaping, architectural planning, interior design, electrical, plumbing and full project management." } },
+          { "@type": "Question", "name": "Is Formax Builders licensed and insured?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Formax Builders has been licensed, bonded and insured since 2017, with a strong safety record across residential, commercial and infrastructure projects." } },
+          { "@type": "Question", "name": "What design styles does Formax Builders build?", "acceptedAnswer": { "@type": "Answer", "text": "We build across three signature design languages: Box-Model / Minimalist, Fusion / Traditional Hybrid, and Tropical Contemporary." } },
+          { "@type": "Question", "name": "How can I get a quote from Formax Builders?", "acceptedAnswer": { "@type": "Answer", "text": "Request a free quote through the contact page, email formaxbuilders@gmail.com, or call/WhatsApp +91 99952 38832. The team typically replies within 1–2 business days." } }
+        ]
+      }
+    ]
   }
   </script>
 </head>
