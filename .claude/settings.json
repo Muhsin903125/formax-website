@@ -21,7 +21,9 @@
       "Bash(npx --yes vercel@latest ls)",
       "Bash(curl -s -o /dev/null -w \"formaxbuilders.com: %{http_code}\\\\n\" https://formaxbuilders.com/)",
       "Bash(curl -s https://formaxbuilders.com/)",
-      "Bash(npx --yes vercel@latest inspect https://formax-website-14nx18tuc-muhsin903125s-projects.vercel.app --logs)"
+      "Bash(npx --yes vercel@latest inspect https://formax-website-14nx18tuc-muhsin903125s-projects.vercel.app --logs)",
+      "Bash(rm -f *.jpeg)",
+      "Bash(rm -rf .playwright-mcp)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",

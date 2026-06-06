@@ -32,8 +32,12 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
 .cms-button { border: 1px solid transparent; border-radius: 100px; padding: 0.6rem 1.2rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; }
 .cms-button-primary { background: var(--gold); color: var(--ink); }
 .cms-button-primary:hover { background: var(--gold-deep); }
-.cms-button-secondary { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.15); }
-.cms-button-secondary:hover { background: rgba(255,255,255,0.18); }
+/* default (on the light content panel): dark text so it's visible */
+.cms-button-secondary { background: var(--bg); color: var(--text); border-color: var(--line); }
+.cms-button-secondary:hover { background: #e8e1d3; }
+/* on the dark topbar: keep it light */
+.cms-topbar .cms-button-secondary { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.18); }
+.cms-topbar .cms-button-secondary:hover { background: rgba(255,255,255,0.2); }
 .cms-button-danger { background: rgba(229,72,77,0.12); color: var(--danger); border-color: rgba(229,72,77,0.3); }
 .cms-button-danger:hover { background: var(--danger); color: #fff; }
 .cms-button[data-loading] { opacity: 0.6; pointer-events: none; }
