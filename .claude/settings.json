@@ -11,7 +11,17 @@
       "Bash(git config *)",
       "Bash(echo \"=== committing as $\\(git config user.name\\) ===\")",
       "Bash(git push *)",
-      "Bash(git credential *)"
+      "Bash(git credential *)",
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(npx --yes vercel@latest login)",
+      "Bash(npx --yes vercel@latest whoami)",
+      "Bash(npx --yes vercel@latest link --yes --project formax-website)",
+      "Bash(npx --yes vercel@latest --prod --yes)",
+      "Bash(npx --yes vercel@latest ls)",
+      "Bash(curl -s -o /dev/null -w \"formaxbuilders.com: %{http_code}\\\\n\" https://formaxbuilders.com/)",
+      "Bash(curl -s https://formaxbuilders.com/)",
+      "Bash(npx --yes vercel@latest inspect https://formax-website-14nx18tuc-muhsin903125s-projects.vercel.app --logs)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",

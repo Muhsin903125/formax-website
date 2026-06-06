@@ -524,7 +524,7 @@
             </div>
             <div class="field"><label for="cf-message">Project Details *</label><textarea id="cf-message" name="message" required placeholder="Tell us about your project, timeline and budget…"></textarea></div>
             <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button>
+            <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button><a class="btn btn--whatsapp" href="https://wa.me/${esc(tel(c.site.whatsapp))}" target="_blank" rel="noopener">${ICONS.whatsapp} WhatsApp</a></div>
             <div class="form-note" id="cf-note" role="status"></div>
           </form>
         </div>
@@ -615,7 +615,7 @@
               </div>
               <div class="field"><label for="cf-message">Project Details *</label><textarea id="cf-message" name="message" required></textarea></div>
               <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button>
+              <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button><a class="btn btn--whatsapp" href="https://wa.me/${esc(tel(c.site.whatsapp))}" target="_blank" rel="noopener">${ICONS.whatsapp} WhatsApp</a></div>
               <div class="form-note" id="cf-note" role="status"></div>
             </form>
           </div>

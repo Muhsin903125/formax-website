@@ -3,3 +3,9 @@ node_modules/
 .vercel
 .DS_Store
 data/submissions.json
+
+.vercel
+
+.playwright-mcp/
+*.jpeg
+*.png

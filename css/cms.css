@@ -73,6 +73,13 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
 .cms-card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .cms-card-header h2 { font-family: var(--display); font-size: 1.15rem; }
 .cms-card-header h3 { font-size: 1rem; }
+/* Accordion: collapsible cards & repeater items */
+.cms-card > .cms-card-header, .cms-item-card > .cms-card-header { cursor: pointer; user-select: none; }
+.cms-card > .cms-card-header h2::after, .cms-item-card > .cms-card-header h3::after { content: " ▾"; color: var(--muted); font-size: 0.7em; }
+.cms-collapsed > .cms-card-header h2::after, .cms-collapsed > .cms-card-header h3::after { content: " ▸"; }
+.cms-card.cms-collapsed { margin-bottom: 0.6rem; }
+.cms-collapsed > :not(.cms-card-header) { display: none !important; }
+.cms-collapsed > .cms-card-header { margin-bottom: 0; }
 
 .cms-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .cms-grid .cms-field.full { grid-column: 1 / -1; }

@@ -660,5 +660,16 @@
     event.returnValue = '';
   });
 
+  // Accordion: click a card / repeater-item header to collapse or expand it.
+  panel.addEventListener('click', (event) => {
+    if (event.target.closest('button, a, input, textarea, select, label')) return;
+    const head = event.target.closest('.cms-card-header');
+    if (!head) return;
+    const box = head.parentElement;
+    if (box && (box.classList.contains('cms-card') || box.classList.contains('cms-item-card'))) {
+      box.classList.toggle('cms-collapsed');
+    }
+  });
+
   load();
 })();

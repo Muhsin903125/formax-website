@@ -214,24 +214,37 @@
       submit.disabled = true;
       const label = submit.querySelector('span');
       const original = label ? label.textContent : '';
-      if (label) label.textContent = 'Sending…';
+      if (label) label.textContent = 'Opening WhatsApp…';
+      // Save the lead (best effort), then hand off to WhatsApp.
       try {
-        const res = await fetch('/api/contact', {
+        await fetch('/api/contact', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(data),
         });
-        const payload = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(payload.error || 'Something went wrong. Please try again.');
-        form.reset();
-        note.className = 'form-note ok';
-        note.textContent = 'Thank you! Your request has been received — we’ll be in touch within 1–2 business days.';
-      } catch (err) {
-        note.className = 'form-note err';
-        note.textContent = err.message;
-      } finally {
-        submit.disabled = false;
-        if (label) label.textContent = original;
+      } catch (_) { /* still proceed to WhatsApp */ }
+
+      const site = (window.__formax && window.__formax.site) || {};
+      const num = String(site.whatsapp || '').replace(/[^\d]/g, '');
+      const text = [
+        "Hi Formax Builders, I'd like a quote.",
+        `Name: ${data.name}`,
+        `Email: ${data.email}`,
+        data.phone ? `Phone: ${data.phone}` : '',
+        data.subject ? `Project type: ${data.subject}` : '',
+        '',
+        data.message,
+      ].filter(Boolean).join('\n');
+
+      form.reset();
+      note.className = 'form-note ok';
+      submit.disabled = false;
+      if (label) label.textContent = original;
+      if (num) {
+        note.textContent = 'Opening WhatsApp with your details…';
+        window.open(`https://wa.me/${num}?text=${encodeURIComponent(text)}`, '_blank');
+      } else {
+        note.textContent = 'Thank you! Your request has been received — we’ll be in touch shortly.';
       }
     });
   }
