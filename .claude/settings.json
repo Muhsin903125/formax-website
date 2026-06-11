@@ -29,7 +29,10 @@
       "PowerShell($p = \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\\\\css\\\\style.css\"; try { $fs = [System.IO.File]::Open\\($p, 'Open', 'ReadWrite', 'ReadWrite'\\); $fs.Close\\(\\); Write-Output \"writable\" } catch { Write-Output \"locked: $\\($_.Exception.Message\\)\" })",
       "PowerShell($p = \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\\\\css\\\\style.css\"; $c = [System.IO.File]::ReadAllText\\($p\\); $c = $c -replace '%232e4d4a', '%230a2b4c'; $c = $c.Replace\\('.brand img, .brand .brand-logo { height: 40px; width: auto; }', '.brand img, .brand .brand-logo { height: 48px; width: auto; }'\\); [System.IO.File]::WriteAllText\\($p, $c, \\(New-Object System.Text.UTF8Encoding\\($false\\)\\)\\); \\(Select-String -Path $p -Pattern '%230a2b4c'\\).Count)",
       "PowerShell(npm test)",
-      "PowerShell(npm run dev)"
+      "PowerShell(npm run dev)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status --short)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website log --oneline -5)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status --ignored --short)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",

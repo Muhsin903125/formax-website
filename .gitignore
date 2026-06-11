@@ -9,3 +9,6 @@ data/submissions.json
 .playwright-mcp/
 *.jpeg
 *.png
+# brand assets must ship (the giant FORMAX LOGO *.png originals stay ignored)
+!assets/logo-*.png
+!assets/favicon.png

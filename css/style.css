@@ -356,7 +356,8 @@ html { scrollbar-width: thin; scrollbar-color: var(--gold) var(--bg-alt); }
 @media (max-width: 560px) { .rw-card { flex: 0 0 100%; } .rw-gridlines { display: none; } }
 
 /* ---- Project detail ---- */
-.project-detail-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.8rem 0; margin: 2.5rem 0; }
+.project-detail-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.8rem 0; margin: 0 0 2.5rem; }
+#project-detail .section { padding-top: 2rem; }
 .project-detail-meta .k { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
 .project-detail-meta .v { font-family: var(--font-display); font-size: 1.3rem; margin-top: 0.3rem; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
