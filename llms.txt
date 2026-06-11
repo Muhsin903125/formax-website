@@ -1,8 +1,14 @@
 # Formax Builders
 
-> Premium construction company (established 2017) — a full-service builder and developer delivering residential, commercial and infrastructure projects from foundation to finish. Licensed, bonded & insured.
+> Premium construction company in Kerala, India (established 2017) — a full-service builder and developer delivering residential, commercial and infrastructure projects from foundation to finish across Thrissur, Kochi, Palakkad and Malappuram. Licensed, bonded & insured.
 
 Formax Builders ("Formax Builders and Developers") handles the entire build under one accountable team: architectural planning, house building, commercial construction, renovation & remodeling, landscaping, interior design, electrical, plumbing and project management.
+
+## Service Areas
+- Thrissur, Kerala (base)
+- Kochi / Ernakulam, Kerala
+- Palakkad, Kerala
+- Malappuram, Kerala
 
 ## Contact
 - Email: formaxbuilders@gmail.com

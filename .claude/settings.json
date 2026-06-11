@@ -32,7 +32,14 @@
       "PowerShell(npm run dev)",
       "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status --short)",
       "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website log --oneline -5)",
-      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status --ignored --short)"
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status --ignored --short)",
+      "PowerShell(npm test 2>$null)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website add .gitignore assets cms.html css data/site-content.json index.html about.html services.html projects.html contact.html project.html privacy.html js/site-content.js lib/content-store.js)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website status)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website log --oneline -3)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website ls-tree HEAD assets/ --name-only)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website fetch upstream production 2>$null)",
+      "PowerShell(git -C d:\\\\MuhsinStuff\\\\projects\\\\formax-website ls-tree upstream/production assets/ --name-only)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",

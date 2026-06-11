@@ -6,7 +6,7 @@
     "email": "formaxbuilders@gmail.com",
     "phone": "+91 99952 38832",
     "whatsapp": "919995238832",
-    "address": "123 Construction Way, Suite 200, Builder City",
+    "address": "Thrissur, Kerala, India",
     "instagram": "https://instagram.com/formaxbuilders",
     "facebook": "https://www.facebook.com/profile.php?id=61590441039128",
     "linkedin": "https://www.linkedin.com/in/formax-builders-b105b5414/",
@@ -258,7 +258,7 @@
       "slug": "luxury-housing-development",
       "title": "Luxury Housing Development",
       "category": "Residential",
-      "location": "Builder City",
+      "location": "Thrissur, Kerala",
       "year": "2024",
       "value": "₹15M",
       "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1400",
@@ -577,7 +577,7 @@
   },
   "contact": {
     "officeTitle": "Headquarters",
-    "officeAddress": "123 Construction Way, Suite 200\nBuilder City",
+    "officeAddress": "Thrissur, Kerala\nIndia",
     "emailTitle": "Email Us",
     "emails": [
       "formaxbuilders@gmail.com"
