@@ -11,8 +11,8 @@
   const qs = (sel, root = document) => root.querySelector(sel);
   const setHtml = (sel, html) => { const n = qs(sel); if (n) n.innerHTML = html; };
 
-  const img = (src, alt, cls) =>
-    src ? `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy"${cls ? ` class="${cls}"` : ''}>` : '';
+  const img = (src, alt, cls, w, h) =>
+    src ? `<img src="${esc(src)}" alt="${esc(alt || '')}" loading="lazy"${cls ? ` class="${cls}"` : ''}${w ? ` width="${w}" height="${h || w}"` : ''}>` : '';
 
   const accentLast = (text) => {
     const words = String(text || '').trim().split(' ');
@@ -275,7 +275,7 @@
             ${(c.home.stats || []).slice(0, 3).map((s) => `<div class="hero-idx"><span class="iv">${esc(s.number)}${esc(s.suffix || '')}</span><span class="il">${esc(s.label)}</span></div>`).join('')}
           </div>
         </div>
-        ${h.image ? `<div class="hero-media"><div class="hero-media-badge">${esc(c.site.established || '2017')}</div>${img(h.image, c.site.name)}</div>` : ''}
+        ${h.image ? `<div class="hero-media"><div class="hero-media-badge">${esc(c.site.established || '2017')}</div><img src="${esc(h.image)}" alt="${esc(c.site.name)}" width="1100" height="825" fetchpriority="high" loading="eager"></div>` : ''}
       </div>`;
   }
 
