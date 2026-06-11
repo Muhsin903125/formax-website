@@ -23,7 +23,13 @@
       "Bash(curl -s https://formaxbuilders.com/)",
       "Bash(npx --yes vercel@latest inspect https://formax-website-14nx18tuc-muhsin903125s-projects.vercel.app --logs)",
       "Bash(rm -f *.jpeg)",
-      "Bash(rm -rf .playwright-mcp)"
+      "Bash(rm -rf .playwright-mcp)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; foreach \\($n in @\\('clr','wht','blc'\\)\\) { $img = [System.Drawing.Image]::FromFile\\(\"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\\\\assets\\\\FORMAX LOGO $n.png\"\\); Write-Output \"$n : $\\($img.Width\\) x $\\($img.Height\\)\"; $img.Dispose\\(\\) })",
+      "Read(//c/Users/Muhsin/AppData/Local/Temp/**)",
+      "PowerShell($p = \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\\\\css\\\\style.css\"; try { $fs = [System.IO.File]::Open\\($p, 'Open', 'ReadWrite', 'ReadWrite'\\); $fs.Close\\(\\); Write-Output \"writable\" } catch { Write-Output \"locked: $\\($_.Exception.Message\\)\" })",
+      "PowerShell($p = \"d:\\\\MuhsinStuff\\\\projects\\\\formax-website\\\\css\\\\style.css\"; $c = [System.IO.File]::ReadAllText\\($p\\); $c = $c -replace '%232e4d4a', '%230a2b4c'; $c = $c.Replace\\('.brand img, .brand .brand-logo { height: 40px; width: auto; }', '.brand img, .brand .brand-logo { height: 48px; width: auto; }'\\); [System.IO.File]::WriteAllText\\($p, $c, \\(New-Object System.Text.UTF8Encoding\\($false\\)\\)\\); \\(Select-String -Path $p -Pattern '%230a2b4c'\\).Count)",
+      "PowerShell(npm test)",
+      "PowerShell(npm run dev)"
     ],
     "additionalDirectories": [
       "D:\\MuhsinStuff\\projects\\formax-website",

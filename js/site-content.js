@@ -91,10 +91,7 @@
 
   function brandMarkup(site) {
     if (site.logo) return `<img class="brand-logo" src="${esc(site.logo)}" alt="${esc(site.name)}">`;
-    const words = String(site.name || 'Formax Builders').split(' ');
-    const first = words.shift();
-    return `<img class="brand-logo" src="assets/logo-mark.svg" alt="" aria-hidden="true">
-      <span>${esc(first)}${words.length ? ` <b>${esc(words.join(' '))}</b>` : ''}</span>`;
+    return `<img class="brand-logo" src="assets/logo-full.png" alt="${esc(site.name || 'Formax Builders')}">`;
   }
 
   function renderHeader(c) {
@@ -275,7 +272,7 @@
             <div class="hero-cta">${primary}${secondary}</div>
           </div>
           <div class="hero-index">
-            ${(c.home.stats || []).slice(0, 3).map((s, i) => `<div class="hero-idx"><span class="ix">(0${i + 1})</span><span class="iv">${esc(s.number)}${esc(s.suffix || '')}</span><span class="il">${esc(s.label)}</span></div>`).join('')}
+            ${(c.home.stats || []).slice(0, 3).map((s) => `<div class="hero-idx"><span class="iv">${esc(s.number)}${esc(s.suffix || '')}</span><span class="il">${esc(s.label)}</span></div>`).join('')}
           </div>
         </div>
         ${h.image ? `<div class="hero-media"><div class="hero-media-badge">${esc(c.site.established || '2017')}</div>${img(h.image, c.site.name)}</div>` : ''}
@@ -524,7 +521,7 @@
             </div>
             <div class="field"><label for="cf-message">Project Details *</label><textarea id="cf-message" name="message" required placeholder="Tell us about your project, timeline and budget…"></textarea></div>
             <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button><a class="btn btn--whatsapp" href="https://wa.me/${esc(tel(c.site.whatsapp))}" target="_blank" rel="noopener">${ICONS.whatsapp} WhatsApp</a></div>
+            <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button> </div>
             <div class="form-note" id="cf-note" role="status"></div>
           </form>
         </div>
@@ -615,7 +612,7 @@
               </div>
               <div class="field"><label for="cf-message">Project Details *</label><textarea id="cf-message" name="message" required></textarea></div>
               <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button><a class="btn btn--whatsapp" href="https://wa.me/${esc(tel(c.site.whatsapp))}" target="_blank" rel="noopener">${ICONS.whatsapp} WhatsApp</a></div>
+              <div class="cf-actions"><button class="btn btn--primary" type="submit" id="cf-submit"><span>Send Request</span> ${ICONS.arrow}</button> </div>
               <div class="form-note" id="cf-note" role="status"></div>
             </form>
           </div>
